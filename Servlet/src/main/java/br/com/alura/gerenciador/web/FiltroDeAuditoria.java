@@ -9,9 +9,11 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import br.com.alura.gerenciador.Usuario;
 
 @WebFilter(urlPatterns = "/*")
 public class FiltroDeAuditoria implements Filter {
@@ -26,18 +28,16 @@ public class FiltroDeAuditoria implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		String uri = req.getRequestURI();
-		String nomeDoUsuario = "<deslogado>";
+		String usuario = "<deslogado>";
 		
-		Cookie cookie = new Cookies(req.getCookies()).getUsuarioLogado();
+		HttpSession session = req.getSession();
+		Usuario usuarioLogado = (Usuario) session.getAttribute("usuario-logado");
 		
-		if(cookie != null) {
-			nomeDoUsuario = cookie.getValue();
-			cookie.setMaxAge(60 * 10);
-			resp.addCookie(cookie);
+		if(usuarioLogado != null) {
+			usuario = usuarioLogado.getEmail();
 		}
 		
-		System.out.println("Usuário " + nomeDoUsuario + " acessando: " + uri);	
-		
+		System.out.println("Usuário " + usuario + " acessando: " + uri);	
 		
 		chain.doFilter(request, response);
 		
