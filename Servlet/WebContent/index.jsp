@@ -11,28 +11,35 @@
 
 <body>
 
+	Bem vindo ao nosso gerenciador de empresas!<br/>	<br>
+	
 	<c:if test="${usuarioLogado != null}">
-		Você está logado como ${usuarioLogado.email}<br><br>
+		<em>Você está logado como ${usuarioLogado.email}</em><br><br><br><br>
 	</c:if>
 	
-	Bem vindo ao nosso gerenciador de empresas!<br/><br><br>
-
-	<form action="fazTudo?tarefa=NovaEmpresa" method="POST">
+	<form action="controller?tarefa=NovaEmpresa" method="POST">
 		Empresa: <input type="text" name="nome">
 		<input type="submit" value="Enviar">
 	</form>
-	<br />
-	<form action="fazTudo?tarefa=BuscaEmpresa" method="POST">
+	
+	<br /><br>
+	
+	<form action="controller?tarefa=BuscaEmpresa" method="POST">
+		Busca: <input type="text" name="filtro">
 		<input type="submit" value="Busca Empresa">
-	</form>	
+	</form>
+		
 	<br /><br />
-	<form action="fazTudo?tarefa=Login" method="POST">
+	
+	<form action="login" method="POST">
 		E-mail: <input type="text" name="email">
 		Senha: <input type="password" name="senha">
 		<input type="submit" value="Logar">
 	</form>
-	<br /><br />
-	<form action="fazTudo?tarefa=Logout" method="POST">
+	
+	<br />
+	
+	<form action="controller?tarefa=Logout" method="POST">
 		<input type="submit" value="Deslogar">
 	</form>	
 
