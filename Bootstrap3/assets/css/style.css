@@ -1,3 +1,10 @@
 #panel-parent{
 	margin-top: 1em;
 }
+
+.review-title{
+	background-color: #0275D8;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-bottom: 0;
+}
