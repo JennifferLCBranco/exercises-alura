@@ -4,13 +4,61 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Top Casa</title>
 	</head>
 
 	<body>
 
-		<h2>Sobre Nós</h2>
+		<div class="container">
+
+			<h2>Sobre Nós</h2>
+			<img class="img-responsive" src="img/empresa.jpg">
+
+			<div class="panel-group" id="panel-parent">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" data-toggle="collapse" data-target="#primeiro-paragrafo" data-parent="#panel-parent">Desde 1935</h3>
+					</div>
+					<div id="primeiro-paragrafo" class="collapse in">
+						<div class="panel-body">
+							<p>Desde 1935 trazendo casas, mansões e prédios lindos para o mundo.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" data-toggle="collapse" data-target="#segundo-paragrafo" data-parent="#panel-parent">Preços acessíveis</h3>
+					</div>
+					<div id="segundo-paragrafo" class="collapse">
+						<div class="panel-body">
+							<p>Preços a partir de R$ 1.000,00.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" data-toggle="collapse" data-target="#terceiro-paragrafo" data-parent="#panel-parent">Alegria em colaborar para um mundo mais bonito</h3>
+					</div>
+					<div id="terceiro-paragrafo" class="collapse">
+						<div class="panel-body">
+							<p>Trazendo alegria para a vida das pessoas que tem dinheiro para gastar.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Importando jQuery e JavaScript -->
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 	</body>
 
