@@ -35,9 +35,12 @@ header h1{
 
 .review-title{
 	background-color: #0275D8;
+    color: #FFF;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 	margin-bottom: 0;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 .radio-group,
@@ -54,4 +57,29 @@ header h1{
 .footer{
     margin-top: 3em;
     margin-bottom: 0;
+}
+
+@media(min-width: 768px) {
+    #panel-parent{
+    	margin-top: 0;
+    }
+}
+
+@media(min-width: 992px) {
+    .banner{
+        left: 0;
+        transform: translate(0, -80%);
+        width: 50%; 
+    }
+
+    .banner-wraper{
+        position: relative;
+        height: 100%;
+    }
+}
+
+@media(min-width: 1024px) {
+    .embaixo-sobre-nos{
+        margin-top: 2em;
+    }
 }
